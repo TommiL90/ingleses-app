@@ -36,3 +36,4 @@
   }
 }
 // npx prettier --write .
+// npx eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore .
