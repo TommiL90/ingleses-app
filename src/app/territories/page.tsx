@@ -3,8 +3,8 @@ import { territories } from "@/constants/territories";
 
 const TerritoriesPage = () => {
   return (
-    <main className="container mx-auto">
-      <ul className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:grid-cols-3">
+    <main className="container mx-auto py-8">
+      <ul className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-8">
         {territories.map((territory) => (
           <CardComponent key={territory.id} territory={territory} />
         ))}

@@ -35,8 +35,8 @@ export default function Map({ geolocation, polygonCoors, zoom, adresses }: IMapP
       center={center}
       zoom={zoom ? zoom : 17}
       minZoom={zoom ? zoom : 17}
-      scrollWheelZoom={true}
-      style={{ width: "100%", height: "100%", position: "relative" }}>
+      // scrollWheelZoom={true}
+      style={{ width: "100%", height: "100%" }}>
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
