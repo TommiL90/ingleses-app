@@ -10,7 +10,7 @@ interface IPageProps {
   params: { id: string };
 }
 
-export const revalidate = 180;
+export const revalidate = 60 * 5;
 
 export async function generateStaticParams() {
   const territoriesData = territories;
@@ -18,7 +18,7 @@ export async function generateStaticParams() {
   return territoriesData.map((territory: iTerritory) => ({
     id: territory.id.toString(),
     params: {
-      _limit: 5,
+      _limit: 31,
       _page: 1
     }
   }));
