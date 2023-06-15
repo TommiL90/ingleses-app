@@ -25,14 +25,24 @@ export default function CardComponent({ territory }: iCardComponentProps) {
         <Typography variant="h5" color="blue-gray" className="mb-2">
           {territory.title}
         </Typography>
-        <Typography>
-          The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to
-          &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.
-        </Typography>
+        <ul className="space-y-2">
+          <li>
+            <b> Barrio:</b> <span className="text-lg font-semibold">Ingleses</span>
+          </li>
+          <li>
+            <b> Último censo completado:</b> 10/10/2022
+          </li>
+          <li>
+            <b> Última predicación completada:</b> 10/10/2022
+          </li>
+          <li>
+            <b> Contactos:</b> 30
+          </li>
+        </ul>
       </CardBody>
       <CardFooter className="pt-0">
         <Button>
-          <Link href="/">Ver detalles</Link>
+          <Link href={`/${territory.id}`}>Ir a territorio</Link>
         </Button>
       </CardFooter>
     </Card>
