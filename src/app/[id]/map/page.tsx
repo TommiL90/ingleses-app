@@ -7,7 +7,7 @@ interface IPageProps {
   params: { id: string };
 }
 
-const DynamicMap = dynamic(() => import("../../../../components/Map"), {
+const DynamicMap = dynamic(() => import("../../../components/Map"), {
   ssr: false,
   loading: () => <div>Loading Map...</div>
 });
