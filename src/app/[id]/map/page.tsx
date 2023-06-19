@@ -1,4 +1,3 @@
-import { addressesExample } from "@/constants/addresses";
 import { territories } from "@/constants/territories";
 import { iTerritory } from "@/types/territory";
 import dynamic from "next/dynamic";
@@ -21,7 +20,6 @@ const mapPage = ({ params }: IPageProps) => {
         geolocation={territory.center}
         polygonCoors={territory.poligono}
         zoom={16}
-        adresses={addressesExample}
       />
     </main>
   );
