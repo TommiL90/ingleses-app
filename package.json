@@ -11,13 +11,18 @@
     "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,json}",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc"
   },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@material-tailwind/react": "^2.0.1",
+    "@prisma/client": "4.15.0",
     "@types/node": "20.2.5",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
+    "bcryptjs": "^2.4.3",
     "eslint-config-next": "13.4.4",
     "leaflet": "^1.9.4",
     "next": "13.4.4",
@@ -30,6 +35,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/leaflet": "^1.9.3",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
@@ -39,6 +45,8 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.3.0"
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "prisma": "^4.15.0",
+    "ts-node": "^10.9.1"
   }
 }

@@ -1,6 +1,7 @@
 import Table from "@/components/Table";
-import { addressesExample } from "@/constants/addresses";
+// import { addressesExample } from "@/constants/addresses";
 import { territories } from "@/constants/territories";
+import { prisma } from "@/lib/prisma";
 import { iTerritory } from "@/types/territory";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -11,6 +12,19 @@ interface IPageProps {
 }
 
 export const revalidate = 60 * 5;
+
+const retrieveAddresses = async (id: number) => {
+  try {
+    const response = await prisma.address.findMany({
+      where: { territoryId: id }
+    });
+
+    return response;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to fetch sectors");
+  }
+};
 
 export async function generateStaticParams() {
   const territoriesData = territories;
@@ -29,9 +43,9 @@ const DynamicMap = dynamic(() => import("../../components/Map"), {
   loading: () => <div>Loading Map...</div>
 });
 
-const TerritoryPage = ({ params }: IPageProps) => {
+const TerritoryPage = async ({ params }: IPageProps) => {
   const territory: iTerritory = territories.find((e) => e.id === Number(params.id))!;
-  const Addresses = addressesExample;
+  const Adresseses = await retrieveAddresses(+params.id);
   return (
     <>
       <main className="mx-auto h-screen max-w-screen-xl py-12">
@@ -44,7 +58,7 @@ const TerritoryPage = ({ params }: IPageProps) => {
             geolocation={territory.center}
             polygonCoors={territory.poligono}
             zoom={16}
-            adresses={addressesExample}
+            addresses={Adresseses}
           />
         </div>
         <div className="container">
@@ -56,7 +70,7 @@ const TerritoryPage = ({ params }: IPageProps) => {
           <h2 className="mb-2 block font-sans text-4xl font-semibold leading-[1.3] tracking-normal text-blue-gray-900 antialiased">
             Direcciones
           </h2>
-          <Table adresses={Addresses} />
+          <Table addresses={Adresseses} />
         </div>
       </main>
     </>

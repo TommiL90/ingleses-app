@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  user      String   @unique @db.VarChar(120)
+  email     String   @unique @db.VarChar(120)
+  password  String   @db.VarChar(120)
+  isAdmin   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+  isDeleted Boolean  @default(false)
+
+  @@map("users")
+}
+
+enum Status {
+  Confirmed
+  ToBeConfirmed
+  DoNotVisit
+}
+
+model Address {
+  id          String    @id @default(uuid())
+  street      String    @db.VarChar(100)
+  number      String    @db.VarChar(50)
+  complement  String?   @db.VarChar(100)
+  description String?   @db.Text()
+  status      Status    @default(Confirmed)
+  latitude    Float     @db.Float()
+  longitude   Float     @db.Float()
+  locationUrl String    @db.Text()
+  createdAt   DateTime  @default(now())
+  lastVist    DateTime? @db.Date()
+  territory   Territory @relation(fields: [territoryId], references: [id], onDelete: Restrict)
+  territoryId Int
+
+
+  @@map("addresses")
+  @@index([territoryId])
+}
+
+model Territory {
+  id            Int       @id @default(autoincrement())
+  neighborhood  String?   @db.VarChar(100)
+  lastCensus    DateTime? @db.Date()
+  lastPreaching DateTime? @db.Date()
+  addresses     Address[]
+  reports       Report[]
+
+  @@map("territories")
+}
+
+model Report {
+  id          Int       @id @default(autoincrement())
+  createdAt   DateTime  @default(now())
+  content     String    @db.Text()
+  territory   Territory @relation(fields: [territoryId], references: [id], onDelete: Cascade)
+  territoryId Int       @unique
+
+  @@map("reports")
+}

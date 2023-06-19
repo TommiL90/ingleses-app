@@ -1,11 +1,11 @@
-import { iAddress } from "@/constants/addresses";
 import { TABLE_HEAD } from "@/constants/table";
+import { Address } from "@prisma/client";
 
 interface iTableProps {
-  adresses: iAddress[];
+  addresses: Address[];
 }
 
-const Table = ({ adresses }: iTableProps) => {
+const Table = ({ addresses }: iTableProps) => {
   return (
     <>
       <div className="flex flex-col">
@@ -29,7 +29,7 @@ const Table = ({ adresses }: iTableProps) => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 bg-white">
-                  {adresses.map((address, index) => (
+                  {addresses.map((address, index) => (
                     <tr key={index}>
                       <td className="px-6 py-4">
                         <div className="flex items-center">
@@ -37,7 +37,7 @@ const Table = ({ adresses }: iTableProps) => {
                         </div>
                       </td>
                       <td className="whitespace-nowrap px-6 py-4">
-                        <div className="text-sm text-gray-900">{address.address}</div>
+                        <div className="text-sm text-gray-900">{address.street}</div>
                       </td>
                       <td className="whitespace-nowrap px-6 py-4">
                         <div className="text-sm text-gray-900">{address.number}</div>
@@ -55,11 +55,11 @@ const Table = ({ adresses }: iTableProps) => {
                       <td className="whitespace-nowrap px-6 py-4">
                         <span
                           className={`inline-flex rounded-full px-2 text-xs font-semibold leading-5 ${
-                            address.status === "Activo"
+                            address.status === "Confirmed"
                               ? "bg-green-100 text-green-800"
-                              : address.status === "Por confirmar"
+                              : address.status === "ToBeConfirmed"
                               ? "bg-amber-100 text-amber-800"
-                              : address.status === "No activo"
+                              : address.status === "DoNotVisit"
                               ? "bg-red-100 text-red-800"
                               : ""
                           }`}>

@@ -3,6 +3,8 @@ import { MapContainer, TileLayer, Marker, Popup, useMap, Tooltip, Polygon } from
 import "leaflet/dist/leaflet.css";
 import { iAddress } from "@/constants/addresses";
 import AddressIcon from "../Pin";
+import { Address } from "@prisma/client";
+import Link from "next/link";
 
 interface LatLangExpression {
   lat: number;
@@ -17,7 +19,7 @@ interface IMapProps {
   zoom: number;
   geolocation: LatLangExpression;
   polygonCoors: number[][];
-  adresses?: iAddress[];
+  addresses?: Address[];
 }
 
 function ChangeView({ coords }: ChangeViewProps) {
@@ -26,10 +28,10 @@ function ChangeView({ coords }: ChangeViewProps) {
   return null;
 }
 
-export default function Map({ geolocation, polygonCoors, zoom, adresses }: IMapProps) {
+export default function Map({ geolocation, polygonCoors, zoom, addresses }: IMapProps) {
   const geoData: LatLangExpression = geolocation; // ex. { lat: -27.425786, lng: -48.403245 }
   const center = { lat: geoData.lat, lng: geoData.lng };
-
+  console.log(addresses);
   return (
     <MapContainer
       center={center}
@@ -43,16 +45,20 @@ export default function Map({ geolocation, polygonCoors, zoom, adresses }: IMapP
       />
       {geoData.lat && geoData.lng && (
         <>
-          {adresses &&
-            adresses.map((address, index) => {
+          {addresses &&
+            addresses.map((address, index) => {
               const addressCoors: LatLangExpression = {
-                lat: address.location.lat,
-                lng: address.location.lng
+                lat: address.latitude,
+                lng: address.longitude
               };
               return (
-                <Marker position={addressCoors} icon={AddressIcon(index + 1)} key={address.mapLink}>
+                <Marker
+                  position={addressCoors}
+                  icon={AddressIcon(index + 1)}
+                  key={address.locationUrl}>
                   <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
+                    Ir a mapa de googleMaps <br />{" "}
+                    <Link href={address.locationUrl}>Pincha aquí</Link>.
                   </Popup>
                 </Marker>
               );
