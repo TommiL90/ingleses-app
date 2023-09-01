@@ -23,7 +23,7 @@ export default function CardComponent({ territory }: iCardComponentProps) {
       </CardHeader>
       <CardBody>
         <Typography variant="h5" color="blue-gray" className="mb-2">
-          {territory.title}
+          {territory.title} i
         </Typography>
         <ul className="space-y-2">
           <li>
