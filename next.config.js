@@ -3,7 +3,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  compiler: process.env.NODE_ENV !== "development"
+  compiler: {
+    removeConsole: process.env.NODE_ENV !== "development"
+  }
 };
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
