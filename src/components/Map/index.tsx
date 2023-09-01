@@ -1,9 +1,7 @@
 "use client";
 import { MapContainer, TileLayer, Marker, Popup, useMap, Tooltip, Polygon } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { iAddress } from "@/constants/addresses";
 import AddressIcon from "../Pin";
-import { Address } from "@prisma/client";
 import Link from "next/link";
 
 interface LatLangExpression {
@@ -19,7 +17,7 @@ interface IMapProps {
   zoom: number;
   geolocation: LatLangExpression;
   polygonCoors: number[][];
-  addresses?: Address[];
+  addresses?: any[];
 }
 
 function ChangeView({ coords }: ChangeViewProps) {
@@ -57,7 +55,7 @@ export default function Map({ geolocation, polygonCoors, zoom, addresses }: IMap
                   icon={AddressIcon(index + 1)}
                   key={address.locationUrl}>
                   <Popup>
-                    Ir a mapa de googleMaps <br />{" "}
+                    Ir a mapa de IGooglemaps <br />{" "}
                     <Link href={address.locationUrl}>Pincha aquí</Link>.
                   </Popup>
                 </Marker>

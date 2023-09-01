@@ -1,5 +1,5 @@
 "use client";
-import { iTerritory } from "@/types/territory";
+
 import {
   Card,
   CardHeader,
@@ -10,9 +10,10 @@ import {
 } from "@material-tailwind/react";
 import { SiOpenstreetmap } from "react-icons/si";
 import Link from "next/link";
+import { IGooglemaps } from "@/types/googlemaps";
 
 interface iCardComponentProps {
-  territory: iTerritory;
+  territory: IGooglemaps;
 }
 
 export default function CardComponent({ territory }: iCardComponentProps) {
@@ -27,9 +28,9 @@ export default function CardComponent({ territory }: iCardComponentProps) {
         </Typography>
         <ul className="space-y-2">
           <li>
-            <b> Barrio:</b> <span className="text-lg font-semibold">Ingleses</span>
+            <b> Barrio:</b> <span className="text-lg font-semibold">{territory.neighborhood}</span>
           </li>
-          <li>
+          {/* <li>
             <b> Último censo completado:</b> 10/10/2022
           </li>
           <li>
@@ -37,7 +38,7 @@ export default function CardComponent({ territory }: iCardComponentProps) {
           </li>
           <li>
             <b> Contactos:</b> 30
-          </li>
+          </li> */}
         </ul>
       </CardBody>
       <CardFooter className="pt-0">

@@ -1,8 +1,7 @@
 import { TABLE_HEAD } from "@/constants/table";
-import { Address } from "@prisma/client";
 
 interface iTableProps {
-  addresses: Address[];
+  addresses: any[];
 }
 
 const Table = ({ addresses }: iTableProps) => {
@@ -24,7 +23,7 @@ const Table = ({ addresses }: iTableProps) => {
                       </th>
                     ))}
                     <th scope="col" className="relative px-6 py-3">
-                      <span className="sr-only"> Link GoogleMaps</span>
+                      <span className="sr-only"> Link IGooglemaps</span>
                     </th>
                   </tr>
                 </thead>
