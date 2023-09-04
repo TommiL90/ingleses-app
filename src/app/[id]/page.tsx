@@ -13,8 +13,8 @@ export async function generateStaticParams() {
   return territoriesData.map((territory: IGooglemaps) => ({
     id: territory.id.toString(),
     params: {
-      _limit: 31,
-      _page: 31
+      _limit: 32,
+      _page: 32
     }
   }));
 }

@@ -2,6 +2,12 @@ import { IGooglemaps } from "@/types/googlemaps";
 
 export const maps: IGooglemaps[] = [
   {
+    id: 0,
+    title: "Territorio Español-Ingleses",
+    neighborhood: "Mapa Congregación",
+    url: "https://www.google.com/maps/d/embed?mid=1Y4J3wkTzbfo4ymGzUhbdPbvO-a5N9Jc&ehbc=2E312F"
+  },
+  {
     id: 1,
     title: "Territorio 1",
     neighborhood: "Ingleses",
@@ -36,6 +42,12 @@ export const maps: IGooglemaps[] = [
     title: "Territorio 6",
     neighborhood: "Ingleses",
     url: "https://www.google.com/maps/d/embed?mid=116lTcIXkuv90CTCddXj9TcZIfE9HCYE&ehbc=2E312F"
+  },
+  {
+    id: 7,
+    title: "Territorio 7",
+    neighborhood: "Ingleses",
+    url: "https://www.google.com/maps/d/embed?mid=1F7P03iS8f9Vma5pVmE6nbDGQkfN6NGU&ehbc=2E312F"
   },
   {
     id: 19,
