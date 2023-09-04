@@ -5,6 +5,20 @@ interface IPageProps {
   params: { id: string };
 }
 
+export const revalidate = 60 * 60;
+
+export async function generateStaticParams() {
+  const territoriesData = maps;
+
+  return territoriesData.map((territory: IGooglemaps) => ({
+    id: territory.id.toString(),
+    params: {
+      _limit: 31,
+      _page: 31
+    }
+  }));
+}
+
 const TerritoryPage = async ({ params }: IPageProps) => {
   const territory: IGooglemaps = maps.find((e) => e.id === Number(params.id))!;
   return (
