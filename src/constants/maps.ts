@@ -50,6 +50,54 @@ export const maps: IGooglemaps[] = [
     url: "https://www.google.com/maps/d/embed?mid=1F7P03iS8f9Vma5pVmE6nbDGQkfN6NGU&ehbc=2E312F"
   },
   {
+    id: 8,
+    title: "Territorio 8",
+    neighborhood: "Ingleses",
+    url: "https://www.google.com/maps/d/embed?mid=1yC2XoF7efURYmp4LjixYbWVJVgnJKCo&ehbc=2E312F"
+  },
+  {
+    id: 9,
+    title: "Territorio 9",
+    neighborhood: "Ingleses",
+    url: "https://www.google.com/maps/d/embed?mid=1VvOo3jZAW8eF-I68yKGZSzcWC-yoRSw&ehbc=2E312F"
+  },
+  {
+    id: 10,
+    title: "Territorio 10",
+    neighborhood: "Ingleses",
+    url: "https://www.google.com/maps/d/embed?mid=1APdlDGlliykVbjDXlR556evSmFJffkw&ehbc=2E312F"
+  },
+  {
+    id: 11,
+    title: "Territorio 11",
+    neighborhood: "Ingleses",
+    url: "https://www.google.com/maps/d/embed?mid=1vFbKI-nQ3bR3p9WgXUM6oA9ngQWuDR0&ehbc=2E312F"
+  },
+  {
+    id: 12,
+    title: "Territorio 12",
+    neighborhood: "Ingleses",
+    url: "https://www.google.com/maps/d/embed?mid=1pnTrq_r2gNHKKdA0ce5EZH1iNGjJLqo&ehbc=2E312F"
+  },
+  {
+    id: 13,
+    title: "Territorio 13",
+    neighborhood: "Ingleses",
+    url: "https://www.google.com/maps/d/embed?mid=1H9pvIfQyPuT8uGpqo6zwA7QqKKyYjRY&ehbc=2E312F"
+  },
+  {
+    id: 14,
+    title: "Territorio 14",
+    neighborhood: "Ingleses",
+    url: "https://www.google.com/maps/d/embed?mid=1DA9j0HYjGNY4Hjv2dxhEtjUKi8IN1Is&ehbc=2E312F"
+  },
+  {
+    id: 15,
+    title: "Territorio 15",
+    neighborhood: "Ingleses",
+    url: "https://www.google.com/maps/d/embed?mid=1FgJ2e548MgK07YSLK5ZjzUkJQUTG96Q&ehbc=2E312F"
+  },
+  {
     id: 19,
     title: "Territorio 19",
     neighborhood: "Santinho",
