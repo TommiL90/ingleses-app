@@ -98,6 +98,24 @@ export const maps: IGooglemaps[] = [
     url: "https://www.google.com/maps/d/embed?mid=1FgJ2e548MgK07YSLK5ZjzUkJQUTG96Q&ehbc=2E312F"
   },
   {
+    id: 16,
+    title: "Territorio 16",
+    neighborhood: "Ingleses",
+    url: "https://www.google.com/maps/d/embed?mid=12inwoXAw4YerolTP552UhWtlf_oA4e4&ehbc=2E312F"
+  },
+  {
+    id: 17,
+    title: "Territorio 17",
+    neighborhood: "Santinho",
+    url: "https://www.google.com/maps/d/embed?mid=1FaxGMOSyu3KtzIa0PvA4dI39iPj2vQ8&ehbc=2E312F"
+  },
+  {
+    id: 18,
+    title: "Territorio 18",
+    neighborhood: "Santinho",
+    url: "https://www.google.com/maps/d/embed?mid=1toZ6ZDBXe-isnsEeyt_UL0y1JOMA3KE&ehbc=2E312F"
+  },
+  {
     id: 19,
     title: "Territorio 19",
     neighborhood: "Santinho",
