@@ -128,6 +128,18 @@ export const maps: IGooglemaps[] = [
     url: "https://www.google.com/maps/d/embed?mid=1SOw5YEJjdTKLLOeFGnfeWpj80FUtfcM&ehbc=2E312F"
   },
   {
+    id: 21,
+    title: "Territorio 21",
+    neighborhood: "Vargem de Bom Jesus",
+    url: "https://www.google.com/maps/d/embed?mid=1hDHm40E5Qy0eCRBnx59aEoO09vO5B60&ehbc=2E312F"
+  },
+  {
+    id: 22,
+    title: "Territorio 22",
+    neighborhood: "Vargem de Bom Jesus",
+    url: "https://www.google.com/maps/d/embed?mid=1bklEaaB5alAT_Y5uUFoKdxjZtdutEeM&ehbc=2E312F"
+  },
+  {
     id: 29,
     title: "Territorio 29",
     neighborhood: "Rio Vermelho",
