@@ -140,6 +140,30 @@ export const maps: IGooglemaps[] = [
     url: "https://www.google.com/maps/d/embed?mid=12_oe4mROrgaYPl-OfO4mEnnKRe82V94&ehbc=2E312F"
   },
   {
+    id: 24,
+    title: "Territorio 24",
+    neighborhood: "Rio Vermelho",
+    url: "https://www.google.com/maps/d/embed?mid=1BJvIIgTiFB1Bp2mOj6c89WD6bIs31kY&ehbc=2E312F"
+  },
+  {
+    id: 25,
+    title: "Territorio 25",
+    neighborhood: "Rio Vermelho",
+    url: "https://www.google.com/maps/d/embed?mid=1HQsYLn8CBmVWfUrhB-569zMbCkhW278&ehbc=2E312F"
+  },
+  {
+    id: 26,
+    title: "Territorio 26",
+    neighborhood: "Rio Vermelho",
+    url: "https://www.google.com/maps/d/embed?mid=1sreaAlScgC9qB96g6Gui3bo8I3E4NjU&ehbc=2E312F"
+  },
+  {
+    id: 27,
+    title: "Territorio 27",
+    neighborhood: "Rio Vermelho",
+    url: "https://www.google.com/maps/d/embed?mid=1h1EANlekxHJnr9A4kML-VeqSqPW6uHw&ehbc=2E312F"
+  },
+  {
     id: 29,
     title: "Territorio 29",
     neighborhood: "Rio Vermelho",
