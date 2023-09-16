@@ -164,6 +164,12 @@ export const maps: IGooglemaps[] = [
     url: "https://www.google.com/maps/d/embed?mid=1h1EANlekxHJnr9A4kML-VeqSqPW6uHw&ehbc=2E312F"
   },
   {
+    id: 28,
+    title: "Territorio 28",
+    neighborhood: "Rio Vermelho",
+    url: "https://www.google.com/maps/d/embed?mid=1fUz4Zi38QSzzJwtVFUe245Ia8ms1ZXo&ehbc=2E312F"
+  },
+  {
     id: 29,
     title: "Territorio 29",
     neighborhood: "Rio Vermelho",
